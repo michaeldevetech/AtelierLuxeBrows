@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #0f0f14;
+    --gold: #c6a75e;
+    --gold-hover: #a88d47;
+    --blush: #e8b4b8;
+    --white-soft: #f5f5f5;
+}
+
+.logo-header {
+    height: 300px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+header{
+    text-align: center;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--white-soft);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', cursive;
+}
+
+
+/*title*/
+h1 {
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(198,167,94,0.4);
+    font-size: 70px;
+    text-align: center;
+    margin-top: 0;
+}
+/*header list display*/
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+
+/*Main page*/ 
+/*pictures of main page*/
+.fotodescripcion {
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    display: block;
+    margin: 30px auto;
+}
+section h2{
+    color: var(--blush);
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+    padding-top: 80px;
+}
+p{
+    color: var(--white-soft);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;;
+}
+
+
+
+/*Page of servicios*/
+.table {
+    color: var(--gold);
+    text-align: center;
+    margin: auto;
+    width: max-content;
+    table-layout:unset;
+    border-spacing: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', cursive;
+}
+
+#tableheader {
+    color: var(--blush);
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+#miservicio {
+    color: var(--pink);
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+
+
+/*Page of agenda cita*/
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 800px;
+    margin: 60px auto;
+}
+
+.agendacita {
+    display: flex;
+    color: var(--white-soft);
+    justify-content: center;
+}
+
+.infodecliente {
+    background-color: #1a1a22;
+    border: 1px solid var(--gold);
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.infodefecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a22;
+    border: 1px solid var(--gold);
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+input {
+    background-color: var(--gold);
+}
+
+#submitbutton{
+    background-color: var(--gold);
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    grid-column: 1/3;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+
+
+/*Page of Como Contactarme*/
+main h1{
+    text-align: center;
+    margin: auto;
+}
+
+h2 a{
+    color: var(--pink);
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+}
+
+
+/*derechos y creacion*/
+footer p {
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+/*footer name*/
+li a {
+    margin-top: 40px;
+    color: var(--gold);
+    font-size: 20px;
+    font-family: sans-serif;
+    display: inline;
+    text-align: center;
+}
+/*footer logo*/
+.logo {
+    margin-top: 40px;
+    height: 40px;
+    width: auto;
+    display: inline;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
