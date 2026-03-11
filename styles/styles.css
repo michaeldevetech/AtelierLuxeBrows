@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* ================ HEADER =================== */
 :root {
     --dark: #0f0f14;
     --gold: #c6a75e;
@@ -46,8 +46,34 @@ nav ul {
     padding: 0;
 }
 
+nav a{
+    position:relative;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding-bottom: 5px;
+}
 
-/*Main page*/ 
+nav a::after{
+    content: "";
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+
+
+
+/* =====================Main page ======================= */ 
 /*pictures of main page*/
 .fotodescripcion {
     height: auto;
@@ -71,41 +97,80 @@ p{
     color: var(--white-soft);
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 800px;;
+    max-width: 800px;
 }
 
 
 
-/*Page of servicios*/
-.table {
+/* =======================Page of servicios======================== */
+.carousel{
+    margin: 60px auto;
+    max-width: 1100px;
+    overflow: hidden;
+}
+
+.carousel-track{
+    display:flex;
+    gap:40px;
+    overflow-x: auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior: smooth;
+    padding: 40px;
+}
+
+.carousel-track .service-card{
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.carousel-track .service-card:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 2;
+}
+/*hide scrollbar*/
+.carousel-track::-webkit-scrollbar{
+    display: none;
+}
+
+.service-card{
+    flex: 0 0 320px; 
+    min-height: 260px; 
+    scroll-snap-align: center;
+    background: #1a1a22;
+    border: 1px solid var(--gold);
+    border-radius: 18px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, opacity 0.35s ease;
+}
+.service-card:hover{
+    transform:scale(1.05);
+}
+
+.service-card h2{
+    color: var(--blush);
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.description{
+    color: var(--white-soft);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.price{
     color: var(--gold);
-    text-align: center;
-    margin: auto;
-    width: max-content;
-    table-layout:unset;
-    border-spacing: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', cursive;
-}
-
-#tableheader {
-    color: var(--blush);
-    text-decoration: underline;
-    font-size: 30px;
-    text-align: center;
-
-}
-
-#miservicio {
-    color: var(--blush);
-    font-size: 15px;
-    text-decoration: underline;
+    font-size: 34px;
+    font-weight: bold;
 }
 
 
 
-/*Page of agenda cita*/
+/* =========================Page of agenda cita ==================== */
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -133,7 +198,6 @@ p{
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-bottom: 15px;
 }
 
 .infodefecha {
@@ -175,37 +239,56 @@ main h1{
     margin: auto;
 }
 
-h2 a{
-    color: var(--blush);
-    font-size: 30px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    text-decoration: none;
-}
-.contact-info {
-    text-align: center;
-    margin-top: 60px;
+.contact-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
 }
 
-.contact-info h2 {
+.contact-info, .location-info{
+    background: #1a1a22;
+    border:1px solid var(--gold);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.contact-info h2, .location-info h2{
     color: var(--blush);
     font-size: 38px;
     letter-spacing: 3px;
     margin-bottom: 30px;
 }
 
-.contact-info a {
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-    margin: 15px 0;
-    transition: 0.3s ease;
+.contact-info a{
+    color:var(--gold);
+    text-decoration:none;
+    font-size:20px;
+    display:block;
+    margin:15px 0;
+    transition:0.3s ease;
 }
 
-.contact-info a:hover {
+.contact-info a:hover{
     color: var(--blush);
 }
+
+iframe{
+    width: 100%;
+    height: 320px;
+}
+
+.location-info iframe{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+
 
 /*derechos y creacion*/
 footer p {
@@ -219,23 +302,51 @@ footer p {
 
 
 /*footer name*/
-li a {
-    margin-top: 40px;
-    color: var(--gold);
-    font-size: 20px;
-    font-family: sans-serif;
-    display: inline;
+footer{
     text-align: center;
 }
+
 /*footer logo*/
 .logo {
     margin-top: 40px;
     height: 40px;
     width: auto;
     display: inline;
-    font-size: 10px;
-    text-align: center;
 }
 
+/* ===== Responsive Desgin ======= */
 
+@media (max-width: 768px) {
+    h1{
+        font-size: 40px;
+    }
+    .logo-header{
+        height: 180px;
+    }
+    nav ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contact-container{
+        grid-template-columns: 1fr;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    .carousel-track{
+        gap:20px;
+        padding:20px;
+    }
+    .service-card{
+        flex:0 0 260px;
+    }
+}
 
+@media (max-width: 1024px){
+    h1{
+        font-size: 55px;
+    }
+    .contact-container{
+        grid-template-columns: 1fr;
+    }
+}
