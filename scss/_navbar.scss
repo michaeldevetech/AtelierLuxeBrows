@@ -1,0 +1,44 @@
+@use 'variables';
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$primary-color;
+  padding: 15px 0;
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: variables.$text-color;
+        font-weight: 500;
+        transition: 0.3s ease;
+
+        &:hover {
+          color: lighten(variables.$primary-color, 15%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
