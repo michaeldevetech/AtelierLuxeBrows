@@ -1,6 +1,12 @@
 @use 'variables';
 @use 'navbar';
 
+/* global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -26,7 +32,7 @@ header{
 }
 
 body {
-    background-color: variables.$background-color;
+    background-color: variables.$bg-color;
     color: variables.$text-color;
     font-family:'Lucida Sans', 'Lucida Sans Regular', cursive;
 }
