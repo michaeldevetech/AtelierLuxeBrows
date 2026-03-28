@@ -1,43 +1,39 @@
-@use './variables';
+@use 'variables';
+@use 'mixins';
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: variables.$primary-color;
-  color: variables.$text-color;
-  padding: 15px 0;
+header {
+  text-align: center;
 
-  .nav-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .logo-header {
+    height: 300px;
+    width: auto;
+    margin-bottom: 10px;
 
-    li {
-      list-style: none;
-
-      a {
-        text-decoration: none;
-        color: variables.$text-color;
-        font-weight: 500;
-        transition: 0.3s ease;
-
-        &:hover {
-          color: lighten(variables.$primary-color, 15%);
-        }
-      }
+    @include mixins.respond-to(md) {
+      height: 180px;
     }
   }
-}
 
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    @include mixins.respond-to(md) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
-  img {
-    max-width: 100%;
+  nav li a {
+    text-decoration: none;
+    color: variables.$text-color;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: variables.$primary-hover;
+    }
   }
 }

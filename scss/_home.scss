@@ -1,0 +1,59 @@
+@use 'variables';
+@use 'mixins';
+
+body {
+  background-color: variables.$bg-color;
+  color: variables.$text-color;
+  font-family: variables.$font-body;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Title */
+h1 {
+  color: variables.$text-color;
+  text-shadow: 0 0 10px rgba(198, 167, 94, 0.4);
+  font-size: 70px;
+  text-align: center;
+  margin-top: 0;
+
+  @include mixins.respond-to(lg) { font-size: 55px; }
+  @include mixins.respond-to(md) { font-size: 40px; }
+  @include mixins.respond-to(sm) { font-size: 28px; }
+}
+
+/* Section Titles */
+section h2 {
+  color: variables.$blush;
+  text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+  padding-top: 80px;
+
+  @include mixins.respond-to(md) { font-size: 30px; padding-top: 40px; }
+  @include mixins.respond-to(sm) { font-size: 22px; }
+}
+
+/* Main Page Images */
+.fotodescripcion {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid variables.$primary-color;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  display: block;
+  margin: 30px auto;
+
+  @include mixins.respond-to(md) { max-width: 100%; margin: 20px auto; }
+}
+
+/* Paragraphs */
+p {
+  color: variables.$white-soft;
+  line-height: 1.6;
+  margin: 0 auto 20px auto;
+  max-width: 800px;
+}
