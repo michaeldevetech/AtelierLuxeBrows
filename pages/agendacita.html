@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Reserva tu cita de cejas en línea en Atelier Luxe Brows. Programación sencilla y cómoda.">
-    <title>Atelier Luxe Brows</title>
+    <title>Agenda Tu Cita | Atelier Luxe Brows</title>
     <link rel="stylesheet" href="../css/styles.css">
 
+    <!-- Schema.org JSON-LD for Appointment Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Atelier Luxe Brows",
+        "image": "https://www.example.com/assets/Logo/a-l-l-logo.png",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "AV. Juarez, Int. 7A",
+        "addressLocality": "Jimenez",
+        "addressRegion": "Chihuahua",
+        "postalCode": "31900",
+        "addressCountry": "MX"
+    },
+        "telephone": "+52-140-5626-2509",
+        "url": "https://www.atelierluxebrows.com",
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+52-140-5626-2509",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish","English"]
+    },
+        "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.atelierluxebrows.com/pages/agendacita.html",
+        "inLanguage": "es",
+        "actionPlatform": ["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]
+    },
+        "result": {
+        "@type": "Reservation",
+        "name": "Reserva de Cita de Depilación de Cejas"
+        }
+      }
+    }
+    </script>`
 </head> 
 
 <body>
@@ -29,10 +67,10 @@
         <form action="submit" method="post" class="grid-container">
             <div class="infodecliente">
                 <label for="name" class="agendacita">Nombre de Reservacion</label>
-                <input type="name" id="name" class="agendacita" name="name"><br></br>
+                <input type="text" id="name" class="agendacita" name="name"><br></br>
 
                 <label for="tel" class="agendacita">Numero de Telefono</label>
-                <input type="number" id="tel"class="agendacita" name="tel"><br></br>
+                <input type="tel" id="tel" class="agendacita" name="tel"><br></br>
 
                 <label for="email" class="agendacita">Correo Electronico</label>
                 <input type="email" id="email" class="agendacita" name="email"><br></br>
@@ -44,44 +82,43 @@
                 <label for="time" class="agendacita">Elije un Tiempo</label>
                 <input type="time" id="time" class="agendacita" name="time"><br></br>
             </div> 
-        <br>
-        <button type="submit" class="agendacita" id="submitbutton">Reserva tu Cita</button>
+            <br>
+            <button type="submit" class="agendacita" id="submitbutton">Reserva tu Cita</button>
         </form>
     </main> 
+
+    <footer>
+        <nav class="footer-social">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/Logo/instagram logo.png" alt="Instagram">
+                    <span>Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/Logo/facebook logo.png" alt="Facebook">
+                    <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:michaelgprietobarraza@gmail.com">
+                    <img src="../assets/Logo/email logo.png" alt="Correo">
+                    <span>Email</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/6291242011" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/Logo/whatsapp logo.png" alt="WhatsApp">
+                    <span>WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <h2>© 2026 Atelier Luxe Brows</h2>
+        <h2>Creado Por: MichaelDevTech</h2>
+    </footer>
 </body>
-
-<footer>
-    <nav class="footer-social">
-        <ul>
-        <li>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/Logo/instagram logo.png" alt="Instagram">
-            <span>Instagram</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/Logo/facebook logo.png" alt="Facebook">
-            <span>Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a href="mailto:michaelgprietobarraza@gmail.com">
-            <img src="../assets/Logo/email logo.png" alt="Correo">
-            <span>Email</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://wa.me/6291242011" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/Logo/whatsapp logo.png" alt="WhatsApp">
-            <span>WhatsApp</span>
-            </a>
-        </li>
-        </ul>
-    </nav>
-
-    <h2>© 2026 Atelier Luxe Brows</h2>
-    <h2>Creado Por: MichaelDevTech</h2>
-</footer>
-
 </html>
