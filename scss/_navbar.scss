@@ -1,39 +1,56 @@
 @use 'variables';
 @use 'mixins';
 
-header {
-  text-align: center;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
 
-  .logo-header {
-    height: 300px;
-    width: auto;
-    margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-    @include mixins.respond-to(md) {
-      height: 180px;
-    }
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-    @include mixins.respond-to(md) {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-
-  nav li a {
+  a {
+    position: relative;
     text-decoration: none;
     color: variables.$text-color;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    &:link,
+    &:visited {
+      color: variables.$text-color;
+    }
 
     &:hover {
-      color: variables.$primary-hover;
+      color: variables.$primary;
     }
+
+    &:active {
+      color: variables.$primary;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background-color: variables.$primary;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  @include mixins.respond-to(md) {
+    flex-direction: column;
+    gap: 15px;
   }
 }

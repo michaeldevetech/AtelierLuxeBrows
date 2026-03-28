@@ -1,6 +1,26 @@
 @use 'variables';
 @use 'mixins';
 
+header {
+  text-align: center;
+  padding: 30px 20px 10px;
+
+  .logo-header {
+    height: 300px;          
+    width: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 3px;   
+    margin-bottom: 15px;
+    color: variables.$text-color;
+  }
+}
+
 body {
   background-color: variables.$bg-color;
   color: variables.$text-color;

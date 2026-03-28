@@ -1,36 +1,66 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.navbar a:link, .navbar a:visited {
+  color: #f5f5f5;
+}
+.navbar a:hover {
+  color: #c9a86a;
+}
+.navbar a:active {
+  color: #c9a86a;
+}
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background-color: #c9a86a;
+  transition: width 0.3s ease;
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 header {
   text-align: center;
+  padding: 30px 20px 10px;
 }
 header .logo-header {
   height: 300px;
   width: auto;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto 10px auto;
 }
-@media (max-width: 768px) {
-  header .logo-header {
-    height: 180px;
-  }
-}
-header nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-header nav li a {
-  text-decoration: none;
+header h1 {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
   color: #f5f5f5;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: color 0.3s ease;
-}
-header nav li a:hover {
-  color: #a88d47;
 }
 
 body {
@@ -271,6 +301,46 @@ footer .logo {
   height: 40px;
   width: auto;
   display: inline;
+}
+
+.footer-social {
+  margin-top: 40px;
+}
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+.footer-social li {
+  list-style: none;
+}
+.footer-social a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.footer-social a img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+  /* Make icons neutral (remove blue/green) */
+  filter: grayscale(100%) brightness(0.4);
+  transition: all 0.3s ease;
+}
+.footer-social a:hover {
+  color: #c9a86a;
+}
+.footer-social a:hover img {
+  transform: scale(1.15);
+  filter: brightness(0) saturate(100%) invert(76%) sepia(22%) saturate(450%);
 }
 
 /*# sourceMappingURL=styles.css.map */
