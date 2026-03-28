@@ -1,26 +1,45 @@
 @use 'variables';
 @use 'mixins';
 
+/* ================= HEADER ================= */
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
   padding: 30px 20px 10px;
 
   .logo-header {
-    height: 300px;          
+    height: 300px; 
     width: auto;
     display: block;
-    margin: 0 auto 10px auto;
+    margin-bottom: 10px;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 400;
-    letter-spacing: 3px;   
-    margin-bottom: 15px;
+    letter-spacing: 3px;
+    margin: 0;
     color: variables.$text-color;
+  }
+
+  /* Responsive header */
+  @include mixins.respond-to(md) {
+    .logo-header {
+      height: 60px;
+    }
+
+    h1 {
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
   }
 }
 
+/* ================= GLOBAL BODY ================= */
 body {
   background-color: variables.$bg-color;
   color: variables.$text-color;
@@ -28,52 +47,93 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  letter-spacing: 0.5px;
 }
 
-/* Title */
-h1 {
+/* ================= MAIN TITLE ================= */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+main h1 {
   color: variables.$text-color;
-  text-shadow: 0 0 10px rgba(198, 167, 94, 0.4);
-  font-size: 70px;
   text-align: center;
-  margin-top: 0;
+  font-size: 42px;
+  margin: 20px 0;
 
-  @include mixins.respond-to(lg) { font-size: 55px; }
-  @include mixins.respond-to(md) { font-size: 40px; }
-  @include mixins.respond-to(sm) { font-size: 28px; }
+  @include mixins.respond-to(md) {
+    font-size: 32px;
+  }
+
+  @include mixins.respond-to(sm) {
+    font-size: 26px;
+  }
 }
 
-/* Section Titles */
+/* ================= SECTION TITLES ================= */
+section {
+  margin-bottom: 60px;
+  transition: transform 0.3s ease;
+    &:hover {
+    transform: translateY(-3px);
+  }
+}
+
 section h2 {
   color: variables.$blush;
   text-align: center;
-  font-size: 40px;
-  text-decoration: underline;
-  padding-top: 80px;
+  font-size: 32px;
+  padding-top: 60px;
+  letter-spacing: 0.5px;
 
-  @include mixins.respond-to(md) { font-size: 30px; padding-top: 40px; }
-  @include mixins.respond-to(sm) { font-size: 22px; }
+  @include mixins.respond-to(md) {
+    font-size: 26px;
+    padding-top: 40px;
+  }
+
+  @include mixins.respond-to(sm) {
+    font-size: 22px;
+  }
 }
 
-/* Main Page Images */
+/* ================= IMAGES ================= */
 .fotodescripcion {
   width: 100%;
   max-width: 800px;
   height: auto;
   object-fit: cover;
+
   border-radius: 20px;
-  border: 2px solid variables.$primary-color;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid variables.$primary;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
   display: block;
   margin: 30px auto;
 
-  @include mixins.respond-to(md) { max-width: 100%; margin: 20px auto; }
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+
+  @include mixins.respond-to(md) {
+    margin: 20px auto;
+  }
 }
 
-/* Paragraphs */
+/* ================= TEXT ================= */
 p {
   color: variables.$white-soft;
   line-height: 1.6;
   margin: 0 auto 20px auto;
   max-width: 800px;
+  text-align: center;
+
+  @include mixins.respond-to(sm) {
+    font-size: 14px;
+  }
 }
